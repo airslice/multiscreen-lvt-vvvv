@@ -1,0 +1,425 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="E:\git\lvtlby\MultiScreenLVT (DX11)\MSD_Subpatches\MSD_DemoTextures.v4p" systemname="MSD_DemoTextures" filename="E:\Projects\VVVV_LBY\MultiScreenDog(DX11) - dep\MSD_Subpatches\MSD_DemoTextures.v4p">
+   <BOUNDS type="Window" left="-204" top="2004" width="10212" height="9228">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="3036" top="5544" width="1140" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" slicecount="1" values="..\MSD_Assets\Demo_Texture.jpg">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="3036" top="5544">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Switch (DX11.Texture 2d)" nodename="Switch (DX11.Texture 2d)" componentmode="Hidden" id="1" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="1575" top="6540" width="5940" height="276">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1575" top="6540">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 5" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 6" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 8" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 7" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="1" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Keyboard (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Keyboard (Devices Desktop)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1575" top="1125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1575" top="1125">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="KeyMatch (Keyboard)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="KeyMatch (Keyboard)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1575" top="1590" width="2610" height="270">
+   </BOUNDS>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="Key Match" slicecount="1" values="|m,D1,D2,D3,D4,D5,D6|">
+   </PIN>
+   <PIN pinname="Key Mode" slicecount="1" values="Press">
+   </PIN>
+   <PIN pinname="Oem1" visible="1">
+   </PIN>
+   <PIN pinname="OemQuestion" visible="1">
+   </PIN>
+   <PIN pinname="Oemtilde" visible="1">
+   </PIN>
+   <PIN pinname="D1" visible="1">
+   </PIN>
+   <PIN pinname="D2" visible="1">
+   </PIN>
+   <PIN pinname="D3" visible="1">
+   </PIN>
+   <PIN pinname="M" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1575" top="1590">
+   </BOUNDS>
+   <PIN pinname="D4" visible="1">
+   </PIN>
+   <PIN pinname="D5" visible="1">
+   </PIN>
+   <PIN pinname="D6" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Device" dstnodeid="3" dstpinname="Keyboard">
+   </LINK>
+   <NODE systemname="MultiFlipFlop (Animation)" nodename="MultiFlipFlop (Animation)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1575" top="3675" width="2664" height="276">
+   </BOUNDS>
+   <PIN pinname="Set Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Set 0" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Set 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Set 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Set 3" visible="1">
+   </PIN>
+   <PIN pinname="Set 4" visible="1">
+   </PIN>
+   <PIN pinname="Set 5" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="1" dstpinname="Switch">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="5" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1575" top="7440" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1575" top="7440" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1575" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="1575" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 0">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="2445" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="2445" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="8" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="3300" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="3300" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="10" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 1">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 2">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="4170" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="4170" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="20" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="19" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5040" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="18" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5040" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="18" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="17" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5895" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5895" top="3210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="16" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 3">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 4">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Up Edge" dstnodeid="4" dstpinname="Set 5">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="6" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="1605" y="2288">
+   </LINKPOINT>
+   <LINKPOINT x="1605" y="2288">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="9" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="1635" y="2280">
+   </LINKPOINT>
+   <LINKPOINT x="2445" y="2280">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="11" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="1635" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="3300" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="21" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="1635" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="4170" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="19" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1635" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="5040" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="M" dstnodeid="17" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1635" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="5895" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D1" dstnodeid="6" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="2010" y="2288">
+   </LINKPOINT>
+   <LINKPOINT x="2010" y="2288">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D2" dstnodeid="9" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="2475" y="2288">
+   </LINKPOINT>
+   <LINKPOINT x="2865" y="2288">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D3" dstnodeid="11" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="2910" y="2280">
+   </LINKPOINT>
+   <LINKPOINT x="3705" y="2280">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D4" dstnodeid="21" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="3330" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="4560" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D5" dstnodeid="19" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3765" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="5445" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="D6" dstnodeid="17" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4185" y="2273">
+   </LINKPOINT>
+   <LINKPOINT x="6300" y="2273">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7446" top="1080" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7446" top="1080" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="px">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Content Resolution|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="29" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8667" top="4452" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="29" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <PACK Name="Image" Version="0.2.0">
+   </PACK>
+   <NODE systemname="MSLVT_Demo_Moving" filename="MSLVT_Demo_Moving.v4p" nodename="MSLVT_Demo_Moving.v4p" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="7452" top="4896" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3180" top="1380" width="10305" height="12840">
+   </BOUNDS>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="7452" top="4896">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Texture SizeXY" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="28" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Buffers" dstnodeid="1" dstpinname="Input 4">
+   </LINK>
+   <NODE systemname="MSLVT_Demo_Realmap" filename="MSLVT_Demo_Realmap.v4p" nodename="MSLVT_Demo_Realmap.v4p" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="4512" top="4896" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3045" top="4785" width="8235" height="11250">
+   </BOUNDS>
+   <PIN pinname="Content Resolution" visible="1">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4512" top="4896">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Content Resolution" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Buffers" dstnodeid="1" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Up Edge" dstnodeid="26" dstpinname="Up" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2505" y="4360">
+   </LINKPOINT>
+   <LINKPOINT x="4515" y="4190">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="MSLVT_Demo_RGBWB" filename="MSLVT_Demo_RGBWB.v4p" nodename="MSLVT_Demo_RGBWB.v4p" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="5988" top="5544" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12216" top="5112" width="7020" height="5580">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="5988" top="5544">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="1" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Up Edge" dstnodeid="30" dstpinname="Up" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="3488" y="4488">
+   </LINKPOINT>
+   <LINKPOINT x="5860" y="4560">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

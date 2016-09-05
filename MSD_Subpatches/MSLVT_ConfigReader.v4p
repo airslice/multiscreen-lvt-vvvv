@@ -1,0 +1,309 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="E:\Projects\VVVV_LBY\MultiScreenDog (DX11)\MSD_Subpatches\MSD_ConfigReader.v4p" systemname="MSD_ConfigReader" filename="E:\Projects\VVVV_LBY\MultiScreenDog(DX11) - dep\MSD_Subpatches\MSD_ConfigReader.v4p">
+   <BOUNDS type="Window" left="795" top="4635" width="13605" height="9825">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="Reader (Raw)" filename="" nodename="Reader (Raw)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1575" top="3210" width="990" height="270">
+   </BOUNDS>
+   <PIN pinname="Content" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" visible="1" values="file.txt">
+   </PIN>
+   <PIN pinname="Read" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Count" slicecount="1" values="9999">
+   </PIN>
+   <PIN pinname="Encoding" slicecount="1" values="utf-8">
+   </PIN>
+   <PIN pinname="Toggle line-wise" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Success" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsString (Raw)" nodename="AsString (Raw)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1575" top="3690" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Encoding" slicecount="1" values="utf-8">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Content" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1575" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" slicecount="1" values="../MSD_Config/">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" slicecount="1" values=".xml">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="5" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1755" top="1425" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1755" top="1425" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="text">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Project Name|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output String" dstnodeid="4" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="3" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="XPath (XML)" nodename="XPath (XML)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="1575" top="4875" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XML Input" visible="1" slicecount="1" values="|&lt;tnf&gt;&lt;global&gt;&lt;grid width=&quot;3&quot; height=&quot;5&quot;&gt;&lt;/grid&gt;&lt;board width=&quot;10&quot;&gt;true&lt;/board&gt;&lt;/global&gt;&lt;resList&gt;&lt;img id=&quot;0&quot; posL=&quot;0&quot; posT=&quot;0&quot; sizeW=&quot;1&quot; sizeH=&quot;1&quot; bgColor=&quot;#0090ee&quot; page=&quot;1&quot; 3drotate=&quot;false&quot;&gt;&lt;/img&gt;&lt;/resList&gt;&lt;/tnf&gt;|">
+   </PIN>
+   <PIN pinname="XPath Query" slicecount="1" visible="1" values="/MultiscreenDog/projectors/projector/corner/@x">
+   </PIN>
+   <PIN pinname="Base Element" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Validate on Parse" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="12" dstpinname="XML Input">
+   </LINK>
+   <NODE systemname="XPath (XML)" nodename="XPath (XML)" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="2850" top="4875" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XML Input" visible="1" slicecount="1" values="|&lt;tnf&gt;&lt;global&gt;&lt;grid width=&quot;3&quot; height=&quot;5&quot;&gt;&lt;/grid&gt;&lt;board width=&quot;10&quot;&gt;true&lt;/board&gt;&lt;/global&gt;&lt;resList&gt;&lt;img id=&quot;0&quot; posL=&quot;0&quot; posT=&quot;0&quot; sizeW=&quot;1&quot; sizeH=&quot;1&quot; bgColor=&quot;#0090ee&quot; page=&quot;1&quot; 3drotate=&quot;false&quot;&gt;&lt;/img&gt;&lt;/resList&gt;&lt;/tnf&gt;|">
+   </PIN>
+   <PIN pinname="XPath Query" slicecount="1" visible="1" values="/MultiscreenDog/projectors/projector/corner/@y">
+   </PIN>
+   <PIN pinname="Base Element" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Validate on Parse" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="13" dstpinname="XML Input">
+   </LINK>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1590" top="5340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="14" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="2865" top="5340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output" dstnodeid="15" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="1590" top="5850" width="1320" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="16" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="16" dstpinname="Y">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1590" top="7050" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1590" top="7050" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="48" visible="1" values="-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,1,1,1,-1,-1,-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Homograph Points|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4500" top="1575" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4500" top="1575" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Read">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="1605" top="6420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="XY" dstnodeid="21" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="17" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="XPath (XML)" nodename="XPath (XML)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="4200" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XML Input" visible="1" slicecount="1" values="|&lt;tnf&gt;&lt;global&gt;&lt;grid width=&quot;3&quot; height=&quot;5&quot;&gt;&lt;/grid&gt;&lt;board width=&quot;10&quot;&gt;true&lt;/board&gt;&lt;/global&gt;&lt;resList&gt;&lt;img id=&quot;0&quot; posL=&quot;0&quot; posT=&quot;0&quot; sizeW=&quot;1&quot; sizeH=&quot;1&quot; bgColor=&quot;#0090ee&quot; page=&quot;1&quot; 3drotate=&quot;false&quot;&gt;&lt;/img&gt;&lt;/resList&gt;&lt;/tnf&gt;|">
+   </PIN>
+   <PIN pinname="XPath Query" slicecount="1" visible="1" values="/MultiscreenDog/overlaps/overlap/@width">
+   </PIN>
+   <PIN pinname="Base Element" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Validate on Parse" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="4215" top="5355" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="22" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="23" dstpinname="XML Input">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="4215" top="6420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="24" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4230" top="7050" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4230" top="7050" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Overlaps">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Output" dstnodeid="25" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="XPath (XML)" nodename="XPath (XML)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="5460" top="4890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XML Input" visible="1" slicecount="1" values="|&lt;tnf&gt;&lt;global&gt;&lt;grid width=&quot;3&quot; height=&quot;5&quot;&gt;&lt;/grid&gt;&lt;board width=&quot;10&quot;&gt;true&lt;/board&gt;&lt;/global&gt;&lt;resList&gt;&lt;img id=&quot;0&quot; posL=&quot;0&quot; posT=&quot;0&quot; sizeW=&quot;1&quot; sizeH=&quot;1&quot; bgColor=&quot;#0090ee&quot; page=&quot;1&quot; 3drotate=&quot;false&quot;&gt;&lt;/img&gt;&lt;/resList&gt;&lt;/tnf&gt;|">
+   </PIN>
+   <PIN pinname="XPath Query" slicecount="1" visible="1" values="/MultiscreenDog/overlaps/overlap/@gamma">
+   </PIN>
+   <PIN pinname="Base Element" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Validate on Parse" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="5475" top="5355" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="28" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="5475" top="6420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="27" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="29" dstpinname="XML Input">
+   </LINK>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="2490" top="2715" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="2490" top="2205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Input 2">
+   </LINK>
+   <NODE id="26" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5490" top="7050" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5490" top="7050" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Gammas">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Output" dstnodeid="26" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Bang" dstnodeid="30" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Read">
+   </LINK>
+   </PATCH>
