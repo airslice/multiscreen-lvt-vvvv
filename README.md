@@ -42,6 +42,9 @@ With the softedge feature and homograph transform.
 
 Demo Photo by JOHN TOWNER https://unsplash.com/@heytowner
 
+# Installation
+Place the extracted folder in the Packs folder.
+
 # Notice
 
 * Thanks to catweasel for the great MultiscreenCat 
